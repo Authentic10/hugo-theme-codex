@@ -13,7 +13,7 @@
   @media screen and (min-width: $medium) {
     display: block;
     visibility: visible;
-    padding-top: 3em;
+    padding-top: 2em;
     width: $navWidth;
   }
 }
@@ -50,6 +50,7 @@
   }
 }
 
+
 .nav__list li {
   margin-bottom: 3em;
   line-height: 1.5em;
@@ -62,6 +63,7 @@
     margin-bottom: 1.75em;
   }
 }
+
 
 .nav__list a {
   color: $grey;
@@ -78,5 +80,52 @@
 
   @media screen and (min-width: $medium) {
     font-size: 1em;
+  }
+}
+
+.lang__list {
+  text-align: right;
+  list-style: none;
+  margin: 0;
+  padding-top: 1em;
+
+
+  @media screen and (min-width: $medium) {
+    width: auto;
+  }
+
+  @media screen and (max-width: $medium - 1) {
+    transform: translateY(-25px);
+    opacity: 0;
+    .nav--active & {
+      transform: translateY(0);
+      opacity: 1;
+      transition: all 500ms ease;
+    }
+  }
+}
+
+
+.lang__list li {
+  padding: 0.7em;
+  display: inline;
+}
+
+
+.lang__list a {
+  color: $grey;
+  text-decoration: none;
+  font-size: 1em;
+
+  &.active {
+    color: $black;
+  }
+
+  &:hover {
+    color: $black;
+  }
+
+  @media screen and (min-width: $medium) {
+    font-size: 0.9em;
   }
 }

@@ -2,7 +2,9 @@
     {{ $.Scratch.Set "style_opts" (dict "src" "scss/pages/posts.scss" "dest" "css/posts.css") }}
 {{ end }}
 
+
 {{ define "main" }}
+
     
 {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2 2006" }}    
 
@@ -11,8 +13,8 @@
     {{ range .Pages }}
     <li class="post">
       <div class="post__header">
-        <time class="post__date" datetime="{{ .Date }}"
-          >{{ .Date.Format $dateFormat }}</time>
+        {{ if .Date }} <time class="post__date" datetime="{{ .Date }}"
+        >{{ .Date.Format $dateFormat }}</time> {{ end }}
         <h2 class="post__title">
           <a href="{{.RelPermalink}}">{{ .Title }}</a>
         </h2>

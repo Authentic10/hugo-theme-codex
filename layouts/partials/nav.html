@@ -1,10 +1,13 @@
+{{ partial "allLanguages.html" .}}
+
 <nav class="nav" id="navigation">
+  
   <ul class="nav__list">
     {{ $currentPage := . }}
     {{ range .Site.Menus.main }}
       <li>
         <a {{ if or ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.Section .Identifier) }} class="active"
-        {{end}} href="{{ .URL }}">{{ .Name }}</a>
+        {{end}} href="{{ .URL | absLangURL }}">{{ .Name }}</a>
       </li>
     {{ end }}
   </ul>
