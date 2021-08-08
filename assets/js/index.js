@@ -24,17 +24,22 @@ initBurger();
   var switcher = document.getElementById('mode');
   var element = document.body;
   var links = document.getElementById('navigation');
+  var languages = document.getElementById('languages');
+  var socials = document.getElementById('socials');
 
 
   if(!switcher.checked){
     //alert('checked');
     element.classList.toggle("dark-mode");
     links.classList.toggle("dark-mode");
+    languages.classList.toggle("dark-mode");
+    socials.classList.toggle("")
     //switcher.checked = true;
     localStorage.setItem('darkMode','true');
   } else {
     element.classList.toggle("dark-mode");
     links.classList.toggle("dark-mode");
+    languages.classList.toggle("dark-mode");
     localStorage.removeItem('darkMode');
   }
 

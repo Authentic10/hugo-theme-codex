@@ -1,6 +1,8 @@
-<ul class="lang__list">
-    <!--{{ partial "mode.html" .}}-->
-    {{ range $.Site.Home.AllTranslations }}
-    <li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li> 
-    {{ end }}
-</ul>
+<nav class="lang" id="languages">
+    <ul class="lang__list">
+        <!--{{ partial "mode.html" .}}-->
+        {{ range $.Site.Home.AllTranslations }}
+        <li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li> 
+        {{ end }}
+    </ul>
+</nav>
